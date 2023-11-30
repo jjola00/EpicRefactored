@@ -1,3 +1,4 @@
+//import for ActionListener and Button design
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.event.ActionEvent;
@@ -15,7 +16,7 @@ public class MyFrame extends JFrame implements GFrame  {
         ImageIcon logo = new ImageIcon("C:\\Users\\JJ\\Downloads\\KS.png");
 
         button = createButton(900, 60, "Discrete Mathematics", new ActionListener() {
-            @Override
+            @Override//overriding method in interface to  make button
             public void actionPerformed(ActionEvent e) {
               DM_ID.run();
             }
