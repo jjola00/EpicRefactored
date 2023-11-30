@@ -1,14 +1,15 @@
+//impports for GUI and List for CSV
 import javax.swing.JOptionPane;
 import java.util.List;
 
 public class CO_ID {
     public static void main(String[] args) {
-            run();
+        run();//initilisation of run method
     }
 
     public static void run() {
         try {
-            int score = 0;
+            int score = 0;//score tracker
             Question questionLoader = new Question();
             List<Question.Data> qList = questionLoader.questions();
 
@@ -18,7 +19,7 @@ public class CO_ID {
 
             JOptionPane.showMessageDialog(null, "Welcome to the Computer Organization Quiz", "Welcome",
                     JOptionPane.PLAIN_MESSAGE);
-
+            //index for comp org questions in csv file
             for (int i = 7; i < 12; i++) {
                 Question.Data q = qList.get(i);
                 String question = q.getQuestion();
@@ -29,7 +30,7 @@ public class CO_ID {
                 String userAnswer = (String) JOptionPane.showInputDialog(null, question, "Question " + (i + 1),
                         JOptionPane.PLAIN_MESSAGE, null, options, null);
 
-                if (userAnswer == null) {
+                if (userAnswer == null) {//handle exception if user closes program
                     JOptionPane.showMessageDialog(null, "Quiz canceled. Exiting...", "Canceled",
                             JOptionPane.INFORMATION_MESSAGE);
                     System.exit(0);
